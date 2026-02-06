@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useIsFocused } from '@react-navigation/native'
 import { View, Text } from 'react-native'
 
 
-function Profile () {
+function Profile() {
+
+    const isFocused = useIsFocused()
+    const [message, setMessage] = useState('')
+
+    useEffect(() => {
+        if (isFocused) {
+            setMessage('Profile Screen Active ✅')
+        } else {
+            setMessage('')
+        }
+    }, [isFocused])
+
     return (
         <>
             <View>
-                <Text> Profile </Text>
+                <Text> { message } </Text>
             </View>
         </>
     )
