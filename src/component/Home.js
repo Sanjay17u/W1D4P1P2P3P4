@@ -1,31 +1,19 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { useFocusEffect } from '@react-navigation/native'
-import { useState, useCallback } from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import HomeScreen from './HomeScreen.js'
+import DetailScreen from './DetailScreen.js'
 
 
-
+const Stack = createNativeStackNavigator()
 
 function Home() {
-
-    const [message, setMessage] = useState('')
-
-    useFocusEffect(
-        useCallback(() => {
-            setMessage('Home Screen Focused ✅')
-
-            return () => {
-                setMessage('')
-            }
-        }, [])
-    )
-    
-
+ 
     return (
         <>
-            <View>
-                <Text>{ message }</Text>
-            </View>
+            <Stack.Navigator>
+                <Stack.Screen name='HomeScreen' component={HomeScreen} />
+                <Stack.Screen name='DetailScreen' component={DetailScreen} />
+            </Stack.Navigator>
         </>
     )
 }
