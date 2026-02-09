@@ -11,8 +11,13 @@ function Home() {
     return (
         <>
             <Stack.Navigator>
-                <Stack.Screen name='HomeScreen' component={HomeScreen} />
-                <Stack.Screen name='DetailScreen' component={DetailScreen} />
+                <Stack.Screen name='HomeScreen' component={HomeScreen} options={{
+                    title: 'Home',
+                    headerBackVisible: false,
+                }} />
+                <Stack.Screen name='DetailScreen' component={DetailScreen} options={{
+                    title: 'Details',
+                }} />
             </Stack.Navigator>
         </>
     )

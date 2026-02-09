@@ -1,9 +1,12 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import { View, Text, Button } from 'react-native'
 
 function HomeScreen({ navigation }) {
 
+  const [message, setMessage] = useState('')
+
   return (
+
     <View>
       <Text>{message}</Text>
 

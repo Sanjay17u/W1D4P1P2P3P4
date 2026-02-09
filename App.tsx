@@ -13,9 +13,11 @@ function App() {
     <>
       <NavigationContainer >
         <Tab.Navigator>
-          <Tab.Screen name='Home' component={Home} />
+          <Tab.Screen name='Home' component={Home} options={{
+            headerShown: false,
+          }} />
           <Tab.Screen name='Profile' component={Profile} />
-          <Tab.Screen name='Setting' component={Setting} />
+          <Tab.Screen name='Setting' component={Setting}  />
         </Tab.Navigator>
       </NavigationContainer>
     </>
