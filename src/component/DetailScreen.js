@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { View, Text, Button } from 'react-native'
 
 function DetailScreen({ navigation }) {
+  
+  const [message, setMessage] = useState('Details Screen')
+  
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Button
+          title="Change"
+          onPress={() => setMessage('Header Button Pressed 🚀')}
+      />
+      )
+    })
+  }, [navigation])
+
   return (
     <View>
-      <Text>Details Screen</Text>
+      <Text>{ message }</Text>
 
       <Button
         title="Go Back"
